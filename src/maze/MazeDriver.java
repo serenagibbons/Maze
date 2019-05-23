@@ -13,6 +13,8 @@ public class MazeDriver extends Application {
 		launch(args);
 	}
 
+	public ImageView droid;
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
@@ -22,14 +24,16 @@ public class MazeDriver extends Application {
 		
 		// Load robot
 		Image droidImg = new Image ("robot.png");
-		ImageView droid = new ImageView(droidImg);
+		droid = new ImageView(droidImg);
 		droid.setX(10);
 		droid.setY(260);
 		
 		Group group = new Group(maze, droid);
-		
 		Scene scene = new Scene(group);
 		
+		// Call processKeyPressed
+		scene.setOnKeyPressed(e->{MazeController.processKeyPressed(e, droid);});
+
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Maze");
 		primaryStage.show();
