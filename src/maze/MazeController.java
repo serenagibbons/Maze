@@ -9,16 +9,20 @@ public class MazeController {
 		switch (e.getCode())
         {
             case UP:
+            	if (droid.getY() >= 10)
                 droid.setY(droid.getY() - 2);
                 break;
             case DOWN:
-                droid.setY(droid.getY() + 2);
+            	if (droid.getY() <= 400)
+            		droid.setY(droid.getY() + 2);
                 break;
             case RIGHT:
-                droid.setX(droid.getX() + 2);
+            	if (droid.getX() <= 570)
+            		droid.setX(droid.getX() + 2);
                 break;
             case LEFT:
-                droid.setX(droid.getX() - 2);
+            	if (droid.getX() >= 9)
+            		droid.setX(droid.getX() - 2);
                 break;
             default:
                 break;  // do nothing if it's not an arrow key
