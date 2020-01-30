@@ -37,15 +37,13 @@ public class MazeController {
             	if (droid.getX() >= 9 && isOnPath(newX, (int)droid.getY(), mazeImg))
             		droid.setX(newX);
                 break;
+            default:
+            	break;
         }
 		
 	}
 	
 	public static boolean isOnPath(int x, int y, Image mazeImg) {
-		// Get height and width of maze
-		int width = (int)mazeImg.getWidth(); 
-	    int height = (int)mazeImg.getHeight(); 
-		
 		// Reading color from the loaded image 
 	    PixelReader pixelReader = mazeImg.getPixelReader(); 
 	    
