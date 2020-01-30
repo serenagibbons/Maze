@@ -25,7 +25,7 @@ public class MazeDriver extends Application {
 		// Load robot
 		Image droidImg = new Image ("robot.png");
 		droid = new ImageView(droidImg);
-		droid.setX(10);
+		droid.setX(13);
 		droid.setY(260);
 		
 		Group group = new Group(maze, droid);
